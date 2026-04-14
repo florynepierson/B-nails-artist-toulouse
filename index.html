@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Nails Artist Toulouse - Prothésiste Ongulaire & Nail Art</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --pastel-blue: #e3f2fd;
+            --soft-blue: #bbdefb;
+            --accent-blue: #90caf9;
+            --pastel-pink: #fce4ec;
+            --dark-text: #546e7a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            cursor: auto !important; /* Force le curseur visible comme demandé */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--pastel-blue);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        /* --- Floating Social Buttons --- */
+        .social-sidebar {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .social-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .social-btn:hover { transform: scale(1.1); }
+        .insta { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+        .fb { background-color: #1877F2; }
+
+        /* --- Header & Hero --- */
+        header {
+            height: 80vh;
+            background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-pink) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo-placeholder {
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 5px solid var(--white);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            overflow: hidden;
+        }
+
+        .logo-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #455a64; }
+        .subtitle { font-size: 1.1rem; margin-bottom: 30px; letter-spacing: 2px; text-transform: uppercase; }
+
+        .btn-booking {
+            padding: 15px 35px;
+            background-color: var(--white);
+            color: var(--dark-text);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-booking:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* --- Section Tarifs --- */
+        .container { max-width: 1000px; margin: 0 auto; padding: 60px 20px; }
+        .section-title { text-align: center; margin-bottom: 50px; font-family: 'Dancing Script', cursive; font-size: 2.5rem; }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .price-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .price-card h3 { border-bottom: 2px solid var(--pastel-blue); padding-bottom: 10px; margin-bottom: 20px; color: var(--accent-blue); }
+
+        .price-item { display: flex; justify-content: space-between; margin-bottom: 10px; }
+        .price-item span:last-child { font-weight: 600; }
+
+        .nail-art-box {
+            margin-top: 40px;
+            background: var(--soft-blue);
+            padding: 30px;
+            border-radius: 20px;
+        }
+
+        /* --- Gallery --- */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .gallery img:hover { transform: scale(1.03); }
+
+        /* --- Infos & Maps --- */
+        .info-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+        }
+
+        .hours-list { list-style: none; }
+        .hours-list li { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid #eee; }
+
+        .rating-box {
+            text-align: center;
+            padding: 20px;
+            background: var(--pastel-pink);
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+        .stars { color: #ffca28; font-size: 1.5rem; }
+
+        footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
+
+        iframe { width: 100%; border-radius: 15px; min-height: 300px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .social-sidebar { bottom: 20px; top: auto; right: 20px; flex-direction: row; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="social-sidebar">
+        <a href="https://www.instagram.com/bnailsartist.tlse/" class="social-btn insta" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="https://www.facebook.com/B.nails.artist.tlse/" class="social-btn fb" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
+    </div>
+
+    <header>
+        <div class="logo-placeholder">
+            <img src="660547794_17970745391875107_3139834292801688041_n..jpg" alt="B Nails Logo">
+        </div>
+        <h1>B Nails Artist</h1>
+        <p class="subtitle">Toulouse • Prothésiste Ongulaire Certifiée</p>
+        <a href="#booking" class="btn-booking">RÉSERVER MA PRESTATION</a>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Mes Prestations & Tarifs</h2>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <h3>Extensions</h3>
+                <div class="price-item"><span>Gel X</span> <span>52€</span></div>
+                <div class="price-item"><span>Dépose + Pose</span> <span>57€</span></div>
+                <div class="price-item"><span>Dépose seule</span> <span>25€</span></div>
+            </div>
+
+            <div class="price-card">
+                <h3>Ongles Naturels</h3>
+                <div class="price-item"><span>Renforcement Gel</span> <span>55€</span></div>
+                <div class="price-item"><span>Remplissage</span> <span>55€</span></div>
+                <div class="price-item"><span>Semi-Permanent</span> <span>27€</span></div>
+                <div class="price-item"><span>Dépose + Pose Semi</span> <span>32€</span></div>
+                <div class="price-item"><span>Dépose seule</span> <span>15€/20€</span></div>
+            </div>
+        </div>
+
+        <div class="nail-art-box">
+            <h3 style="margin-bottom: 15px;">Menu Nail Art</h3>
+            <div class="price-item"><span><strong>Simple</strong> (Étoiles, fleurs, strass, chrome, aura...)</span> <span>10€</span></div>
+            <div class="price-item"><span><strong>Medium</strong> (Gel 2D, charms, french, babyboomer...)</span> <span>15-20€</span></div>
+            <div class="price-item"><span><strong>Complexe</strong> (Dessins minutieux, 3D, gros charms, freestyle)</span> <span>25-30€</span></div>
+        </div>
+
+        <h2 class="section-title" style="margin-top:80px;">Mes Réalisations</h2>
+        <div class="gallery">
+            <img src="661481367_18114292816707260_2585834456053260234_n..jpg" alt="Nail Art Vert">
+            <img src="474391204_17940583160953342_6143972908946413676_n..jpg" alt="Nail Art Violet">
+            <img src="482374298_17945251298953342_6559884743227998991_n..jpg" alt="Nail Art Pastel">
+            <img src="661442516_17936345004206628_660173464251440988_n..jpg" alt="Nail Art Noel">
+            <img src="475608303_17941564532953342_5945862159054482820_n..jpg" alt="Nail Art 3D">
+            <img src="481824852_17944760237953342_6963386398690517473_n..jpg" alt="Nail Art Y2K">
+        </div>
+
+        <div id="booking" class="info-section">
+            <div>
+                <h3 style="margin-bottom: 20px;">Infos Pratiques</h3>
+                <div class="rating-box">
+                    <div class="stars">★★★★★</div>
+                    <p><strong>4.9/5 sur Google Avis</strong></p>
+                    <p style="font-size: 0.8rem;">"Travail minutieux et créativité incroyable !"</p>
+                </div>
+                
+                <ul class="hours-list">
+                    <li><span>Lundi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Mardi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Mercredi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Jeudi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Vendredi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Samedi</span> <span>09:00 – 18:00</span></li>
+                    <li><span>Dimanche</span> <span>Fermé</span></li>
+                </ul>
+                <p style="margin-top: 20px;"><i class="fas fa-phone"></i> 06 75 57 22 54</p>
+            </div>
+
+            <div>
+                <h3 style="margin-bottom: 20px;">Me Trouver</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1d2889.123456789!2d1.4442!3d43.6047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM2JzE3LjAiTiAxwrAyNic0MC4wIkU!5e0!3m2!1sfr!2sfr!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
+                <div style="margin-top: 20px; text-align: center;">
+                    <p>Réservation conseillée via Instagram DM ou Téléphone</p>
+                    <a href="https://www.instagram.com/bnailsartist.tlse/" class="btn-booking" style="display:inline-block; margin-top:10px;">PRENDRE RDV</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 B Nails Artist Toulouse - Béatrice. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour un scroll fluide
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
