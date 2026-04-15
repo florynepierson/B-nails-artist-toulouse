@@ -593,10 +593,195 @@
             color: var(--mid);
         }
 
+        /* ── BOOKING FORM ── */
+        .booking-section { background: linear-gradient(160deg, var(--light-blue) 0%, var(--cream) 60%, var(--pale-pink) 100%); }
+
+        .booking-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 40px;
+            align-items: start;
+        }
+        @media (max-width: 860px) { .booking-wrapper { grid-template-columns: 1fr; } }
+
+        .booking-info-side h3 {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: var(--dark);
+        }
+        .booking-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .booking-rule {
+            background: white;
+            border-radius: 16px;
+            padding: 14px 18px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--mid);
+            border-left: 4px solid var(--soft-blue);
+            line-height: 1.5;
+        }
+        .booking-rule.warn { border-left-color: var(--pink); }
+        .booking-rule strong { color: var(--dark); }
+
+        .booking-form-card {
+            background: white;
+            border-radius: 28px;
+            padding: 40px 36px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.07);
+            position: relative;
+            overflow: hidden;
+        }
+        .booking-form-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 28px;
+            padding: 2px;
+            background: linear-gradient(135deg, var(--soft-blue), var(--pink));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .form-title {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+        .form-subtitle { font-size: 0.88rem; color: var(--mid); margin-bottom: 28px; }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--mid);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid var(--light-blue);
+            border-radius: 14px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.95rem;
+            color: var(--dark);
+            background: var(--cream);
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            appearance: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--soft-blue);
+            background: white;
+        }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+
+        .form-prestation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 500px) { .form-prestation-grid { grid-template-columns: 1fr; } }
+
+        .prestation-option { position: relative; }
+        .prestation-option input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
+        .prestation-option label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--cream);
+            border: 2px solid var(--light-blue);
+            border-radius: 12px;
+            padding: 12px 14px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--mid);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-bottom: 0;
+        }
+        .prestation-option input[type="radio"]:checked + label {
+            background: var(--light-blue);
+            border-color: var(--blue-deep);
+            color: var(--dark);
+        }
+        .prestation-option label:hover { border-color: var(--soft-blue); background: white; }
+
+        .nail-art-toggle {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+        .nail-toggle-btn {
+            padding: 7px 16px;
+            border-radius: 50px;
+            border: 2px solid var(--light-blue);
+            background: var(--cream);
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--mid);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .nail-toggle-btn.active { background: var(--light-blue); border-color: var(--blue-deep); color: var(--dark); }
+        .nail-toggle-btn:hover { border-color: var(--soft-blue); background: white; }
+
+        .form-submit {
+            width: 100%;
+            padding: 17px;
+            background: linear-gradient(135deg, var(--soft-blue), var(--pink));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(110,173,212,0.4);
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+        .form-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 35px rgba(110,173,212,0.5); }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 32px;
+        }
+        .form-success .success-icon { font-size: 3.5rem; margin-bottom: 16px; }
+        .form-success h4 { font-family: 'Pacifico', cursive; font-size: 1.8rem; color: var(--dark); margin-bottom: 8px; }
+        .form-success p { color: var(--mid); font-size: 0.92rem; }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             .social-sidebar { bottom: 20px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
             .nail-art-card { padding: 28px 20px; }
+            .booking-form-card { padding: 28px 20px; }
         }
     </style>
 </head>
@@ -671,7 +856,7 @@
                 <span class="hero-tag">🎨 Nail Art complexe</span>
             </div>
 
-            <a href="https://www.instagram.com/bnailsartist.tlse/" class="btn-booking">Prendre rendez-vous</a>
+    <a href="#booking" class="btn-booking">Prendre rendez-vous</a>
         </div>
 
         <div class="scroll-hint">
@@ -767,9 +952,9 @@
                 <div class="section-label">📅 Réservation</div>
                 <h2 class="section-title">Prendre RDV</h2>
             </div>
- 
+
             <div class="booking-wrapper">
- 
+
                 <!-- Info side -->
                 <div class="booking-info-side">
                     <h3>Comment ça marche ?</h3>
@@ -801,13 +986,13 @@
                         </div>
                     </div>
                 </div>
- 
+
                 <!-- Form -->
                 <div class="booking-form-card">
                     <div id="formContent">
                         <div class="form-title">Votre demande ✨</div>
                         <p class="form-subtitle">Je vous réponds sous 24h via Instagram ou par SMS</p>
- 
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Prénom *</label>
@@ -818,12 +1003,12 @@
                                 <input type="tel" id="fphone" placeholder="06 XX XX XX XX" required>
                             </div>
                         </div>
- 
+
                         <div class="form-group">
                             <label>Instagram (optionnel)</label>
                             <input type="text" id="finsta" placeholder="@votre_compte">
                         </div>
- 
+
                         <div class="form-group">
                             <label>Prestation souhaitée *</label>
                             <div class="form-prestation-grid">
@@ -853,7 +1038,7 @@
                                 </div>
                             </div>
                         </div>
- 
+
                         <div class="form-group">
                             <label>Nail Art ? (optionnel)</label>
                             <div class="nail-art-toggle">
@@ -863,7 +1048,7 @@
                                 <button type="button" class="nail-toggle-btn" onclick="toggleNailArt(this,'Complexe +25-30€')">Complexe +25-30€</button>
                             </div>
                         </div>
- 
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Date souhaitée *</label>
@@ -879,24 +1064,24 @@
                                 </select>
                             </div>
                         </div>
- 
+
                         <div class="form-group">
                             <label>Votre projet / inspirations</label>
                             <textarea id="fmessage" placeholder="Décrivez votre idée, couleurs souhaitées, inspirations... (une photo envoyée en DM Instagram sera demandée)"></textarea>
                         </div>
- 
+
                         <button class="form-submit" onclick="submitForm()">
                             Envoyer ma demande 💅
                         </button>
                     </div>
- 
+
                     <div class="form-success" id="formSuccess">
                         <div class="success-icon">🎀</div>
                         <h4>Demande envoyée !</h4>
                         <p>Merci <strong id="successName"></strong> ! Je vous réponds sous 24h par SMS ou Instagram.<br><br>N'oubliez pas de préparer une photo de vos ongles actuels et vos inspirations.</p>
                     </div>
                 </div>
- 
+
             </div>
         </div>
     </section>
@@ -1011,5 +1196,62 @@
         <p>© 2025 B Nails Artist Toulouse — Béatrice</p>
     </footer>
 
+    <script>
+        let selectedNailArt = 'Aucun';
+
+        function toggleNailArt(btn, value) {
+            document.querySelectorAll('.nail-toggle-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selectedNailArt = value;
+        }
+
+        function submitForm() {
+            const fname = document.getElementById('fname').value.trim();
+            const fphone = document.getElementById('fphone').value.trim();
+            const fdate = document.getElementById('fdate').value;
+            const prestation = document.querySelector('input[name="prestation"]:checked');
+
+            if (!fname || !fphone || !fdate || !prestation) {
+                // Highlight missing
+                [document.getElementById('fname'), document.getElementById('fphone'), document.getElementById('fdate')].forEach(el => {
+                    if (!el.value.trim()) { el.style.borderColor = '#e8b4cc'; el.focus(); }
+                });
+                if (!prestation) {
+                    document.querySelectorAll('.prestation-option label').forEach(l => l.style.outline = '2px solid #e8b4cc');
+                    setTimeout(() => document.querySelectorAll('.prestation-option label').forEach(l => l.style.outline = ''), 1800);
+                }
+                return;
+            }
+
+            const ftime = document.getElementById('ftime').value;
+            const finsta = document.getElementById('finsta').value.trim();
+            const fmessage = document.getElementById('fmessage').value.trim();
+
+            // Build WhatsApp / SMS prefill message
+            const msg = encodeURIComponent(
+`Demande de RDV — B Nails Artist
+
+Prénom : ${fname}
+Téléphone : ${fphone}
+Instagram : ${finsta || 'non renseigné'}
+Prestation : ${prestation.value}
+Nail Art : ${selectedNailArt}
+Date souhaitée : ${fdate}
+Créneau : ${ftime || 'non précisé'}
+Projet : ${fmessage || 'non précisé'}
+`);
+
+            // Show success message
+            document.getElementById('formContent').style.display = 'none';
+            document.getElementById('successName').textContent = fname;
+            const successEl = document.getElementById('formSuccess');
+            successEl.style.display = 'block';
+
+            // Open WhatsApp with pre-filled message (phone number of Béatrice)
+            setTimeout(() => {
+                window.open(`https://wa.me/33675572254?text=${msg}`, '_blank');
+            }, 600);
+        }
+    </script>
 </body>
 </html>
