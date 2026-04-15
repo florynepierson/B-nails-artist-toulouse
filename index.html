@@ -813,6 +813,102 @@
                 <div class="notice-chip warn">📅 Créneaux du dimanche majorés de <strong>15 €</strong></div>
             </div>
         </div>
+
+        <!-- Form -->
+                <div class="booking-form-card">
+                    <div id="formContent">
+                        <div class="form-title">Votre demande ✨</div>
+                        <p class="form-subtitle">Je vous réponds sous 24h via Instagram ou par SMS</p>
+ 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Prénom *</label>
+                                <input type="text" id="fname" placeholder="Ex : Sophie" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Téléphone *</label>
+                                <input type="tel" id="fphone" placeholder="06 XX XX XX XX" required>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group">
+                            <label>Instagram (optionnel)</label>
+                            <input type="text" id="finsta" placeholder="@votre_compte">
+                        </div>
+ 
+                        <div class="form-group">
+                            <label>Prestation souhaitée *</label>
+                            <div class="form-prestation-grid">
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p1" value="Gel X">
+                                    <label for="p1">💎 Gel X — 52€</label>
+                                </div>
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p2" value="Renforcement Gel">
+                                    <label for="p2">🌸 Renforcement Gel — 55€</label>
+                                </div>
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p3" value="Semi-Permanent">
+                                    <label for="p3">✨ Semi-Permanent — 27€</label>
+                                </div>
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p4" value="Dépose + Pose">
+                                    <label for="p4">🔄 Dépose + Pose</label>
+                                </div>
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p5" value="Dépose seule">
+                                    <label for="p5">🗑 Dépose seule</label>
+                                </div>
+                                <div class="prestation-option">
+                                    <input type="radio" name="prestation" id="p6" value="Remplissage">
+                                    <label for="p6">🔁 Remplissage — 55€</label>
+                                </div>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group">
+                            <label>Nail Art ? (optionnel)</label>
+                            <div class="nail-art-toggle">
+                                <button type="button" class="nail-toggle-btn" onclick="toggleNailArt(this,'Aucun')">Aucun</button>
+                                <button type="button" class="nail-toggle-btn" onclick="toggleNailArt(this,'Simple +10€')">Simple +10€</button>
+                                <button type="button" class="nail-toggle-btn" onclick="toggleNailArt(this,'Médium +15-20€')">Médium +15-20€</button>
+                                <button type="button" class="nail-toggle-btn" onclick="toggleNailArt(this,'Complexe +25-30€')">Complexe +25-30€</button>
+                            </div>
+                        </div>
+ 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date souhaitée *</label>
+                                <input type="date" id="fdate">
+                            </div>
+                            <div class="form-group">
+                                <label>Créneau préféré</label>
+                                <select id="ftime">
+                                    <option value="">-- Au choix --</option>
+                                    <option>Matin (9h–12h)</option>
+                                    <option>Après-midi (13h–17h)</option>
+                                    <option>Fin de journée (17h–18h)</option>
+                                </select>
+                            </div>
+                        </div>
+ 
+                        <div class="form-group">
+                            <label>Votre projet / inspirations</label>
+                            <textarea id="fmessage" placeholder="Décrivez votre idée, couleurs souhaitées, inspirations... (une photo envoyée en DM Instagram sera demandée)"></textarea>
+                        </div>
+ 
+                        <button class="form-submit" onclick="submitForm()">
+                            Envoyer ma demande 💅
+                        </button>
+                    </div>
+ 
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">🎀</div>
+                        <h4>Demande envoyée !</h4>
+                        <p>Merci <strong id="successName"></strong> ! Je vous réponds sous 24h par SMS ou Instagram.<br><br>N'oubliez pas de préparer une photo de vos ongles actuels et vos inspirations.</p>
+                    </div>
+                </div>
+        
     </section>
 
     <!-- ── PORTFOLIO ── -->
