@@ -760,61 +760,49 @@
         </div>
     </section>
 
-    <!-- ── PRENDRE RDV ── -->
-    <section class="section rdv-section">
+    <!-- ── RÉSERVATION ── -->
+    <section class="section booking-section" id="booking">
         <div class="container">
             <div class="section-header">
                 <div class="section-label">📅 Réservation</div>
                 <h2 class="section-title">Prendre RDV</h2>
-                <p style="color:var(--mid); margin-top:10px; font-size:0.95rem;">Étapes à suivre et rappels importants</p>
             </div>
-
-            <div class="rdv-steps">
-                <div class="rdv-step">
-                    <div class="rdv-num">1</div>
-                    <div class="rdv-content">
-                        <h4>Envoyer un DM</h4>
-                        <p>Avec une photo de vos ongles et votre projet <strong>(schéma, inspirations, photos)</strong></p>
+ 
+            <div class="booking-wrapper">
+ 
+                <!-- Info side -->
+                <div class="booking-info-side">
+                    <h3>Comment ça marche ?</h3>
+                    <div class="booking-rules">
+                        <div class="booking-rule">
+                            <strong>1. Remplissez le formulaire</strong><br>
+                            Décrivez votre projet et votre date souhaitée. Je reviens vers vous sous 24h.
+                        </div>
+                        <div class="booking-rule">
+                            <strong>2. Acompte de 20 €</strong><br>
+                            Via PayPal ou Paylib pour confirmer le créneau.
+                        </div>
+                        <div class="booking-rule">
+                            <strong>3. Confirmation la veille avant 21h</strong><br>
+                            Sans confirmation, le créneau sera annulé.
+                        </div>
+                        <div class="booking-rule">
+                            <strong>4. Le jour J</strong><br>
+                            Arriver à l'heure — annulation à partir de 15 min de retard. Paiement du solde en espèces ou par carte.
+                        </div>
+                        <div class="booking-rule warn">
+                            ⏰ Annulation possible <strong>72h à l'avance</strong> — l'acompte est conservé au-delà
+                        </div>
+                        <div class="booking-rule warn">
+                            🔞 Je n'accepte <strong>pas les mineur·e·s</strong>
+                        </div>
+                        <div class="booking-rule warn">
+                            📅 Créneaux du dimanche <strong>majorés de 15 €</strong>
+                        </div>
                     </div>
                 </div>
-                <div class="rdv-step">
-                    <div class="rdv-num">2</div>
-                    <div class="rdv-content">
-                        <h4>Verser un acompte de 20 €</h4>
-                        <p>Via <strong>PayPal ou Paylib</strong> pour confirmer votre créneau</p>
-                    </div>
-                </div>
-                <div class="rdv-step">
-                    <div class="rdv-num">3</div>
-                    <div class="rdv-content">
-                        <h4>Confirmer son rendez-vous</h4>
-                        <p>La veille avant <strong>21h</strong> — sans confirmation, le créneau est annulé</p>
-                    </div>
-                </div>
-                <div class="rdv-step">
-                    <div class="rdv-num">4</div>
-                    <div class="rdv-content">
-                        <h4>Arriver à l'heure</h4>
-                        <p>Le rdv sera annulé à partir de <strong>15 min de retard</strong></p>
-                    </div>
-                </div>
-                <div class="rdv-step">
-                    <div class="rdv-num">5</div>
-                    <div class="rdv-content">
-                        <h4>Payer le solde restant</h4>
-                        <p>En <strong>espèces ou par carte</strong> le jour J</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rdv-notices">
-                <div class="notice-chip">⏰ Annulation possible <strong>72h à l'avance</strong> — l'acompte est conservé au-delà</div>
-                <div class="notice-chip warn">🔞 Je n'accepte pas les mineur·e·s</div>
-                <div class="notice-chip warn">📅 Créneaux du dimanche majorés de <strong>15 €</strong></div>
-            </div>
-        </div>
-
-        <!-- Form -->
+ 
+                <!-- Form -->
                 <div class="booking-form-card">
                     <div id="formContent">
                         <div class="form-title">Votre demande ✨</div>
@@ -908,7 +896,9 @@
                         <p>Merci <strong id="successName"></strong> ! Je vous réponds sous 24h par SMS ou Instagram.<br><br>N'oubliez pas de préparer une photo de vos ongles actuels et vos inspirations.</p>
                     </div>
                 </div>
-        
+ 
+            </div>
+        </div>
     </section>
 
     <!-- ── PORTFOLIO ── -->
